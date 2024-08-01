@@ -1,0 +1,23 @@
+{
+    "name": "cannv/lara-menu-builder",
+    "description": "Laravel Menu Builder",
+    "minimum-stability": "beta",
+    "authors": [
+        {
+            "name": "cannv",
+            "email": "ngovancanbn@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cannv\\LaraMenuBuilder\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cannv\\LaraMenuBuilder\\MenuBuilderServiceProvider"
+            ]
+        }
+    }
+}
