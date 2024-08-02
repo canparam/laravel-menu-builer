@@ -20,32 +20,6 @@ class MenuBuilderServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/../views', 'cnv_menu_builder');
-
-        // Data test
-        $menu = MenuBuilder::createMenu('admin_menu');
-        $menu->setChildrenAttribute('class', 'mt-2 p-2 mx-3');
-        $menu->addItem('home', [
-            'label' => "Trang chủ",
-            'link' => "https://web.telegram.org/a/#-1002092661036",
-        ]);
-        $menu->addItem('post', [
-            'label' => "Bài viết",
-            'link' => "https://web.telegram.org",
-            'class' => 'zalo kiki',
-            'linkAttr' => [
-                'class' => 'item-link',
-                'id' => 'komi'
-            ]
-        ]);
-
-        $menu2 = MenuBuilder::createMenu('admin_menu_2');
-        $menu2->setChildrenAttribute('class', 'mt-2 p-2 mx-3');
-        $menu2->addItem('menu2', [
-            'label' => "Trang chủ 2",
-            'link' => "https://web.telegram.org/a/#-1002092661036",
-        ]);
-
-        // end test
     }
 
     protected function loadHelpers()

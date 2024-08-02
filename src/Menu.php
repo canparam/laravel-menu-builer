@@ -65,4 +65,39 @@ class Menu implements MenuInterface
     {
         return $this->childrenAttribute;
     }
+
+    public function addItemBefore(string $beforeName,string $name, $options = [])
+    {
+        $position = $this->getPosition($beforeName);
+        $items = $this->items;
+        if ($position === false) {
+            $this->addItem($name, $options);
+        }else{
+            $before = array_slice($items, 0, $position, true);
+            $after = array_slice($items, $position, null, true);
+            $this->items = $before + [$name => $options] + $after;
+        }
+        return $this;
+    }
+
+    public function addItemAfter(string $afterName,string $name, $options = [])
+    {
+        $position = $this->getPosition($afterName);
+        $items = $this->items;
+        if ($position === false) {
+            $this->addItem($name, $options);
+        } else {
+            $position++;
+            $before = array_slice($items, 0, $position, true);
+            $after = array_slice($items, $position, null, true);
+            $this->items = $before + [$name => $options] + $after;
+        }
+
+        return $this;
+    }
+    private function getPosition($key): int | bool
+    {
+        $keys = array_keys($this->items);
+        return array_search($key, $keys);
+    }
 }

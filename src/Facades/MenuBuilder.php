@@ -2,12 +2,15 @@
 
 namespace Cannv\LaraMenuBuilder\Facades;
 
+use Cannv\LaraMenuBuilder\Contracts\MenuFactoryInterface;
+use Cannv\LaraMenuBuilder\Contracts\MenuInterface;
+use Cannv\LaraMenuBuilder\Menu;
 use Illuminate\Support\Facades\Facade;
 /**
- * @method static \Cannv\LaraMenuBuilder\Menu createMenu(string $name)
- * @method static \Cannv\LaraMenuBuilder\Menu getMenu(string $name)
+ * @method static MenuInterface createMenu(string $name)
+ * @method static MenuInterface getMenu(string $name)
  *
- * @see \Cannv\LaraMenuBuilder\MenuFactory
+ * @see MenuFactoryInterface
  */
 class MenuBuilder extends Facade
 {
