@@ -9,24 +9,9 @@ use Illuminate\Database\Eloquent\MassAssignmentException;
 
 class MenuItem implements MenuItemInterface
 {
-    use HasAttributes;
-
-    protected $fillable = [
-        'label',
-        'url',
-        'route',
-        'class_name',
-        'attr'
-    ];
+    //todo
     public function create(array $data)
     {
-        $this->fill($data);
-        return $this;
-    }
-    private function fill(array $attr)
-    {
-        foreach ($attr as $k => $item) {
-            $this->setAttribute($k, $item);
-        }
+        // TODO: Implement create() method.
     }
 }

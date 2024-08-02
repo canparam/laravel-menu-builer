@@ -95,6 +95,14 @@ class Menu implements MenuInterface
 
         return $this;
     }
+    public function addChildItem(string $prefix, string $name, $options = [])
+    {
+        $prefix = explode('.',$prefix);
+        $items = $this->items;
+        foreach ($prefix as $pre){
+
+        }
+    }
     private function getPosition($key): int | bool
     {
         $keys = array_keys($this->items);
