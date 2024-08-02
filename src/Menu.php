@@ -95,13 +95,13 @@ class Menu implements MenuInterface
 
         return $this;
     }
-    public function addChildItem(string $prefix, string $name, $options = [])
+    public function addChildItem(string $id, string $name, $options = [])
     {
-        $prefix = explode('.',$prefix);
-        $items = $this->items;
-        foreach ($prefix as $pre){
-
+        if (!isset($this->items[$id])){
+            throw new \Exception("{$id}: attribute not found");
         }
+        $this->items[$id]['childItems'] = array_merge($this->items[$id]['childItems'] ?? [],[ $name => $options]);
+        return $this;
     }
     private function getPosition($key): int | bool
     {
